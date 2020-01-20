@@ -27,11 +27,11 @@ const DragDropManager = Object.create(null, {
                     // Append card to target component as child
                     // TODO: This should only happen if the target has no children nodes
                     // e.target.appendChild(document.querySelector(`.${data.split(" ")[1]}`));
-                    if (e.target.classList[0] == "stage"){
+                    if (e.target.classList[0] == "stage" && target.classList[1] == "grid"){
                         target.appendChild(document.querySelector(`.${data.split(" ")[1]}`));
                     }else if (target.classList[1] == "grid" && (e.target.classList[0] != "stage")){
                         e.target.appendChild(document.querySelector(`.${data.split(" ")[1]}`));
-                    } else if (target.children.length < 1 ){
+                    } else if (target.childNodes.length == 0 ){
                         e.target.appendChild(document.querySelector(`.${data.split(" ")[1]}`));
                     }
                 };
